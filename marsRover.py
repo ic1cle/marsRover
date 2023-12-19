@@ -107,8 +107,6 @@ class Queue(list):
 		a1_3 = degrees(atan((12)/(sqrt(pow(vR, 2)+(12*vR)+180)-6)))
 		a4_6 = degrees(atan(12/(sqrt(pow(vR, 2)-12*vR+180)-6)))
 		print(v1_3, v2, v5, v4_6, a1_3, a4_6)
-		print('PID Position: ' + roboclaw.ReadM2PositionPID(address[5]))
-		print('ENC Val: ' + roboclaw.ReadEncM2(address[5]))
 		return v1_3, v2, v5, v4_6, a1_3, a4_6
 
 	def append(self, event):
@@ -361,6 +359,8 @@ if __name__ == '__main__':
 	try:
 		setup()
 		print('Setup completed with default ip')
+		print('PID Position: ' + roboclaw.ReadM2PositionPID(address[5]))
+		print('ENC Val: ' + roboclaw.ReadEncM2(address[5]))
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:
