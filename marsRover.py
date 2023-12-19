@@ -360,7 +360,7 @@ if __name__ == '__main__':
 		setup()
 		print('Setup completed with default ip')
 		# print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
-		print('ENC Val: ' + roboclaw.ReadEncM2('132'))
+		print('ENC Val: ' + roboclaw.ReadEncM2('0x84'))
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:
