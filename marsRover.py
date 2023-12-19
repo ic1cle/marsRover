@@ -13,7 +13,7 @@ import cmath as cm
 socket.setdefaulttimeout(10)
 tank_controls = True
 
-def run_script_on_exit(): # we had i litttle bit of oooopsie so we kill :D
+def run_script_on_exit(): # we had i litttle bit of oooopsie so we kill :Ds
     subprocess.call(['/home/pi/Desktop/marsRover/KillProcess.sh'])
 
 atexit.register(run_script_on_exit)
