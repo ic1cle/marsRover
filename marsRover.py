@@ -121,6 +121,8 @@ class Queue(list):
 		print('Current Turning Speed: ' + str(self.turning))
 		print('Current Turn Radius: ' + str(self.radius))
 		print('Current Cmd Duration: ' + str(self.duration) + " Seconds")
+		print('PID Position: ' + roboclaw.ReadM2PositionPID(self, address[5]))
+		print('ENC Val: ' + roboclaw.ReadEncM2(self, address[5]))
 		print("------------------------------------------")
 
 	def run_next(self):

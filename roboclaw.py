@@ -692,7 +692,7 @@ class Roboclaw:
 	def LeftRightMixed(self,address,val):
 		return self._write1(address,self.Cmd.MIXEDLR,val)
 
-	def ReadEncM1(self,address):
+	def ReadEncM1(self,address)			#! seems important
 		return self._read4_1(address,self.Cmd.GETM1ENC)
 
 	def ReadEncM2(self,address):
@@ -900,7 +900,7 @@ class Roboclaw:
 			return (1,min,max)
 		return (0,0,0)
 
-	def SetM1PositionPID(self,address,kp,ki,kd,kimax,deadzone,min,max):
+	def SetM1PositionPID(self,address,kp,ki,kd,kimax,deadzone,min,max): 		#! Also seems  important
 #		return self._write4444444(address,self.Cmd.SETM1POSPID,long(kd*1024),long(kp*1024),long(ki*1024),kimax,deadzone,min,max)
 		return self._write4444444(address,self.Cmd.SETM1POSPID,kd*1024,kp*1024,ki*1024,kimax,deadzone,min,max)
 
