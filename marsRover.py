@@ -155,7 +155,7 @@ def setup(ip=c.pi_ip):
 		5: 0x84 #back steering
 	}
 
-	roboclaw = Roboclaw("/dev/ttyS0", 38400)
+	roboclaw = Roboclaw("/dev/txtyS0", 38400)
 	roboclaw.Open()
  
 	queue.velocityandstuf()
@@ -360,7 +360,7 @@ if __name__ == '__main__':
 		setup()
 		print('Setup completed with default ip')
 		# print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
-		print('ENC Val: ' + ','.join([str(value) for value in (roboclaw.ReadEncM2(132))]))
+		print('ENC Val: ' + ','.join([str(value) for value in (roboclaw.ReadEncM2(0x84))]))
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:
