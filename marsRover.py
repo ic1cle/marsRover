@@ -121,8 +121,8 @@ class Queue(list):
 		print('Current Turning Speed: ' + str(self.turning))
 		print('Current Turn Radius: ' + str(self.radius))
 		print('Current Cmd Duration: ' + str(self.duration) + " Seconds")
-		print('PID Position: ' + roboclaw.ReadM2PositionPID(address[5]))
-		print('ENC Val: ' + roboclaw.ReadEncM2(address[5]))
+		print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
+		print('ENC Val: ' + roboclaw.ReadEncM2(132))
 		print("------------------------------------------")
 
 	def run_next(self):
@@ -359,8 +359,8 @@ if __name__ == '__main__':
 	try:
 		setup()
 		print('Setup completed with default ip')
-		print('PID Position: ' + roboclaw.ReadM2PositionPID(address[5]))
-		print('ENC Val: ' + roboclaw.ReadEncM2(address[5]))
+		print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
+		print('ENC Val: ' + roboclaw.ReadEncM2(132))
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:
