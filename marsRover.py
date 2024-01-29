@@ -357,7 +357,7 @@ if __name__ == '__main__':
 	global local_testing
 	local_testing = False
 	setup()
-	print(roboclaw.ReadEncM1(address[3]))
+	print(roboclaw.ReadEncM1(0x82))
 	try:
 		setup()
 		print('Setup completed with default ip')
