@@ -363,7 +363,7 @@ if __name__ == '__main__':
 		print('Setup completed with default ip')
 		# print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
 		try:
-			print(roboclaw.ReadEncM1(address[4]))
+			print(roboclaw.ReadEncM1(address[3]))
 		except:
 			print("line not working")
 	except:
