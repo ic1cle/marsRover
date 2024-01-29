@@ -360,10 +360,7 @@ if __name__ == '__main__':
 		setup()
 		print('Setup completed with default ip')
 		# print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
-		try:
-			print('ENC Val: ' + ','.join([str(value) for value in (roboclaw.ReadEncM1(address[128]))]))
-		except:
-			print("This line is wrong")
+		print('ENC Val: ' + ','.join([str(value) for value in (roboclaw.ReadEncM1(address[4]))]))
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:
