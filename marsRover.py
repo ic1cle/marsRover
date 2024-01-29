@@ -356,6 +356,7 @@ def close():
 if __name__ == '__main__':
 	global local_testing
 	local_testing = False
+	setup()
 	print(roboclaw.ReadEncM1(address[4]))
 	try:
 		setup()
