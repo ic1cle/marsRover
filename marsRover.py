@@ -158,7 +158,7 @@ def setup(ip=c.pi_ip):
 	roboclaw = Roboclaw("/dev/txtyS0", 38400)
 	roboclaw.Open()
  
-	queue.velocityandstuf()
+	#queue.velocityandstuf()
 
 def drive(speed):
 	print('drive')
@@ -350,17 +350,22 @@ def close():
 	print("Stopping")
 	sleep(2)
 	if 'connecton' in globals().keys(): connection.close()
-	subprocess.call(['/home/pi/Desktop/marsRover/KillProcess'])
+	subprocess.call(['/home/pi/Desktop/marsRover/KillProcess.sh'])
 
 
 if __name__ == '__main__':
 	global local_testing
 	local_testing = False
+	#setup()
+	#print(roboclaw.ReadEncM1(0x82))
 	try:
 		setup()
 		print('Setup completed with default ip')
 		# print('PID Position: ' + roboclaw.ReadM2PositionPID(132))
-		print('ENC Val: ' + ','.join([str(value) for value in (roboclaw.ReadEncM2(address[128]))]))
+		#try:
+		#	print(roboclaw.ReadEncM1(address[3]))
+		#except:
+		#	print("line not working")
 	except:
 		retry_query = input('Setup failed. Do you want to...\n  1. Retry with different ip\n  2. Run local testing\n  3. Exit\nResponse: ')
 		while True:

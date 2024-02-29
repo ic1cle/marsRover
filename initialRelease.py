@@ -243,52 +243,52 @@ def fancy_controls(): # faNcY
 
     buttons = {
         letter: Button(
-            text=letter.upper(),
-            tx=c.rgb_white,
-            hold_fill=Texture(tx=c.rgb_red, size=(c.b_size - 2 * c.b_marg,) * 2),
+            text = letter.upper(),
+            tx = c.rgb_white,
+            hold_fill = Texture(tx=c.rgb_red, size=(c.b_size - 2 * c.b_marg,) * 2),
             key=letter,
-            on_hold=button_hold_func,
-            on_hold_args=(bitlist,),
-            x=abs(-(c.b_marg + c.b_size) + light_index * (c.b_marg + c.b_size)) + c.b_marg, #Button margin x-axis
-            y=c.b_marg if light_index == 0 else 2 * c.b_marg + c.b_size, #Button margin y-axis
-            width=c.b_size, #button width
-            height=c.b_size #Button height
+            on_hold = button_hold_func,
+            on_hold_args = (bitlist,),
+            x = abs(-(c.b_marg + c.b_size) + light_index * (c.b_marg + c.b_size)) + c.b_marg, #Button margin x-axis
+            y = c.b_marg if light_index == 0 else 2 * c.b_marg + c.b_size, #Button margin y-axis
+            width = c.b_size, #button width
+            height = c.b_size #Button height
         )
     for light_index, letter in enumerate('wasd')}
 
     sliders = {
         'speed': Slider(
-            valrange=(0, 126),
-            default_value=126,
-            increment=1,
-            poskeys=pg.K_UP,
-            negkeys=pg.K_DOWN,
-            size_includes_border=True,
-            size=(c.b_size, c.pg_res[1] - c.b_size - 3 * c.b_marg),
-            topright=(c.pg_res[0] - c.b_marg, c.b_marg)
+            valrange = (0, 126),
+            default_value = 126,
+            increment = 1,
+            poskeys = pg.K_UP,
+            negkeys = pg.K_DOWN,
+            size_includes_border = True,
+            size = (c.b_size, c.pg_res[1] - c.b_size - 3 * c.b_marg),
+            topright = (c.pg_res[0] - c.b_marg, c.b_marg)
         ),
         'keyboard_steering': Slider(
-            valrange=(0, 126),
-            default_value=126,
-            increment=1,
-            poskeys=pg.K_RIGHT,
-            negkeys=pg.K_LEFT,
-            horizontal=True,
-            size_includes_border=True,
-            size=(c.pg_res[0] - c.b_size - 3 * c.b_marg, c.b_size),
-            bottomleft=(c.b_marg, c.pg_res[1] - c.b_marg),
+            valrange = (0, 126),
+            default_value = 126,
+            increment = 1,
+            poskeys = pg.K_RIGHT,
+            negkeys = pg.K_LEFT,
+            horizontal = True,
+            size_includes_border = True,
+            size = (c.pg_res[0] - c.b_size - 3 * c.b_marg, c.b_size),
+            bottomleft = (c.b_marg, c.pg_res[1] - c.b_marg),
         ),
         'controller_steering': Slider(
-            valrange=(-126, 126),
-            default_value=0,
-            increment=2,
-            poskeys=pg.K_RIGHT,
-            negkeys=pg.K_LEFT,
-            horizontal=True,
-            size_includes_border=True,
-            size=(c.pg_res[0] - c.b_size - 3 * c.b_marg, c.b_size),
-            bottomleft=(c.b_marg, c.pg_res[1] - c.b_marg),
-            visible=False
+            valrange = (-126, 126),
+            default_value = 0,
+            increment = 2,
+            poskeys = pg.K_RIGHT,
+            negkeys = pg.K_LEFT,
+            horizontal = True,
+            size_includes_border = True,
+            size = (c.pg_res[0] - c.b_size - 3 * c.b_marg, c.b_size),
+            bottomleft = (c.b_marg, c.pg_res[1] - c.b_marg),
+            visible = False
         )
     }
 
