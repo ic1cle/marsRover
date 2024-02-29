@@ -350,7 +350,7 @@ def close():
 	print("Stopping")
 	sleep(2)
 	if 'connecton' in globals().keys(): connection.close()
-	subprocess.call(['/home/pi/Desktop/marsRover/KillProcess.sh'])
+	subprocess.call(['/home/pi/marsRover/KillProcess.sh'])
 
 
 if __name__ == '__main__':
