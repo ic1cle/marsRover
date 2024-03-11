@@ -156,7 +156,7 @@ def setup(ip=c.pi_ip):
 	}
 
 	roboclaw = Roboclaw("/dev/txtyS0", 38400)
-	roboclaw.Open()
+	print(roboclaw.Open())
  
 	#queue.velocityandstuf()
 
