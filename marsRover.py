@@ -155,7 +155,7 @@ def setup(ip=c.pi_ip):
 		5: 0x84 #back steering
 	}
 
-	roboclaw = Roboclaw("/dev/txtyS0", 38400)
+	roboclaw = Roboclaw("/dev/ttyS0", 38400)
 	print(roboclaw.Open())
  
 	#queue.velocityandstuf()
