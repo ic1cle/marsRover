@@ -14,7 +14,7 @@ socket.setdefaulttimeout(10)
 tank_controls = True
 
 def run_script_on_exit(): # we had i litttle bit of oooopsie so we kill :Ds
-    subprocess.call(['/home/pi/marsRover/KillProcess.sh'])
+    subprocess.call(['/home/pi/Desktop/marsRover/KillProcess.sh'])
 
 atexit.register(run_script_on_exit)
 
@@ -350,7 +350,7 @@ def close():
 	print("Stopping")
 	sleep(2)
 	if 'connecton' in globals().keys(): connection.close()
-	subprocess.call(['/home/pi/marsRover/KillProcess.sh'])
+	subprocess.call(['/home/pi/Desktop/marsRover/KillProcess.sh'])
 
 
 if __name__ == '__main__':
