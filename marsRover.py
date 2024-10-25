@@ -144,7 +144,8 @@ def setup(ip=c.pi_ip):
  
 	inter = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-	print(f"Current ip: {ip}")
+	print("Current ip: ")
+	print(ip)
 	inter.bind((ip, 8080))
 	inter.listen(5)
 
