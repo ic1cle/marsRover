@@ -144,6 +144,7 @@ def setup(ip=c.pi_ip):
  
 	inter = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+	print(f"Current ip: {ip}")
 	inter.bind((ip, 8080))
 	inter.listen(5)
 
@@ -155,7 +156,8 @@ def setup(ip=c.pi_ip):
 		5: 0x84 #back steering
 	}
 
-	roboclaw = Roboclaw("/dev/ttyS0", 38400)
+	print("Opening devPort")
+	roboclaw = Roboclaw("/dev/tty50", 38400) #Not sure if this is a typo or not S or 5
 	print(roboclaw.Open())
  
 	#queue.velocityandstuf()
@@ -378,8 +380,8 @@ if __name__ == '__main__':
 			setup(ip=new_ip)
 			print('Setup completed with ip "' + new_ip + '"')
 		elif retry_query == 2:
-			setup(ip='localhost')
 			local_testing = True
+			setup(ip='localhost')
 			print('Setup completed in local test environment. Running without motors')
 		else: exit()
 	print("Running")
