@@ -44,4 +44,11 @@ if __name__ == "__main__":
 	roboclaw.BackwardM2(address[2], speed)
 	roboclaw.ForwardM1(address[3], speed)
 	roboclaw.ForwardM2(address[3], speed)
+ 
+	roboclaw.BackwardM1(address[1], 0)
+	roboclaw.BackwardM2(address[1], 0)
+	roboclaw.BackwardM1(address[2], 0)
+	roboclaw.BackwardM2(address[2], 0)
+	roboclaw.BackwardM1(address[3], 0)
+	roboclaw.BackwardM2(address[3], 0)
 
